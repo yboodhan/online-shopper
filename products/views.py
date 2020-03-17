@@ -36,10 +36,10 @@ def product_detail(request, pk):
         }}
         response = JsonResponse(data)
     except Product.DoesNotExist:
-        reponse = JsonResponse({
+        response = JsonResponse({
             "error": {
                 "code": 404,
                 "message": "product not found!"
-        }}, status=404)
-        
+        }},
+        status=404)
     return response
